@@ -57,7 +57,7 @@ const fetchWeather = async () => {
     if (!props.city) return;
     
     try {
-        const response = await useFetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${_apiKey}&units=metric`);
+        const response = await useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${_apiKey}&units=metric`);
         
         if (response.data.value) {
             const data = response.data.value;
