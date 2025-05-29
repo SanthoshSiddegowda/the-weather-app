@@ -1,7 +1,7 @@
 <template>
     <div class="weather" v-if="city">
         <img class="weather-icon" :src="weatherIcon" alt="weather icon">
-        <h1 class="temp">{{ temperature }}°C</h1>
+        <h1 class="temp">{{ temperature }}°F</h1>
         <h2 class="city">{{ city }}</h2>
         <div class="details">
             <div style="display: flex;" class="col">
@@ -57,7 +57,7 @@ const fetchWeather = async () => {
     if (!props.city) return;
     
     try {
-        const response = await useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${_apiKey}&units=metric`);
+        const response = await useFetch(`https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${_apiKey}&units=imperial`);
         
         if (response.data.value) {
             const data = response.data.value;
